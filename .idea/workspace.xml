@@ -1,9 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d6550174-cd43-482e-a90d-4fc734461480" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Layout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/navigation/NavigationBar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/account/AccountPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/account/ChangePasswordPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/account/EditProfilePage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/account/ForgottenPasswordPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/account/LoginPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/account/RegistrationPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/appointment/AppointmentItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/appointment/AppointmentPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/appointment/AppointmentsPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/article/ArticleItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/article/ArticlePage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/article/ArticlesPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/create/CreatePage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/dentist/DentistItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/dentist/DentistPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/dentist/DentistsPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/home/HomePage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/record/Record.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/record/RecordItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/record/RecordPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/record/RecordsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1WQhttKqlfoCbwQ2NXXN6rPON3B" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/account" />
     <property name="nodejs_interpreter_path" value="node" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages/account" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d6550174-cd43-482e-a90d-4fc734461480" name="Default Changelist" comment="" />
+      <created>1579092995270</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1579092995270</updated>
+      <workItem from="1579093025766" duration="595000" />
+      <workItem from="1579169244327" duration="590000" />
+      <workItem from="1579271034307" duration="589000" />
+      <workItem from="1579373321754" duration="600000" />
+      <workItem from="1579422149871" duration="210000" />
+      <workItem from="1579618455431" duration="10037000" />
+      <workItem from="1579708543586" duration="2095000" />
+      <workItem from="1580074554731" duration="75000" />
+      <workItem from="1580313603627" duration="654000" />
+      <workItem from="1580323203418" duration="589000" />
+      <workItem from="1580331872989" duration="693000" />
+      <workItem from="1580378652721" duration="590000" />
+      <workItem from="1580417950171" duration="843000" />
+      <workItem from="1580480709552" duration="27000" />
+      <workItem from="1580564614518" duration="11724000" />
+      <workItem from="1580577737323" duration="216000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="453" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579621669730">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="453" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1579621669730" />
+    <state x="659" y="252" key="run.anything.popup" timestamp="1579629321541">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="659" y="252" key="run.anything.popup/70.27.1850.1053@70.27.1850.1053" timestamp="1579629321541" />
   </component>
 </project>
