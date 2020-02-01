@@ -1,37 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6550174-cd43-482e-a90d-4fc734461480" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/layout/Layout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/navigation/NavigationBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/account/AccountPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/account/ChangePasswordPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/account/EditProfilePage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/account/ForgottenPasswordPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/account/LoginPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/account/RegistrationPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/appointment/AppointmentItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/appointment/AppointmentPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/appointment/AppointmentsPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/article/ArticleItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/article/ArticlePage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/article/ArticlesPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/create/CreatePage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/dentist/DentistItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/dentist/DentistPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/dentist/DentistsPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/home/HomePage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/record/Record.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/record/RecordItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/record/RecordPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/record/RecordsPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="d6550174-cd43-482e-a90d-4fc734461480" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,7 +75,7 @@
       <workItem from="1580417950171" duration="843000" />
       <workItem from="1580480709552" duration="27000" />
       <workItem from="1580564614518" duration="11724000" />
-      <workItem from="1580577737323" duration="216000" />
+      <workItem from="1580577737323" duration="572000" />
     </task>
     <servers />
   </component>
