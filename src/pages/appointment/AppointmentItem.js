@@ -4,7 +4,8 @@ import {Divider, Panel} from "rsuite";
 function AppointmentItem(props) {
 
     return (
-        <Panel shaded={true} bordered={true}>
+        <Panel shaded={true} className="shadow-sm" style={{backgroundColor: "white", borderRadius: "24px"}}
+               bordered={true}>
             <small>Name</small>
             <p>{props.appointment.patient.name}</p>
             <Divider/>
@@ -20,7 +21,7 @@ function AppointmentItem(props) {
 
 
             <small>Proposed Date</small>
-            <p>{props.appointment.appointment_date}</p>
+            <p>{new Date(props.appointment.appointment_date).toDateString()}</p>
             <Divider/>
 
             <small>Description</small>

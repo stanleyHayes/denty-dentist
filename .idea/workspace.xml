@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d6550174-cd43-482e-a90d-4fc734461480" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/account/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/account/LoginPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/account/RegistrationPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/account/RegistrationPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/account/AccountPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/account/AccountPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/appointment/AppointmentItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/appointment/AppointmentItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/create/CreatePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/create/CreatePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/dentist/DentistItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dentist/DentistItem.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +88,7 @@
       <workItem from="1580998370215" duration="2266000" />
       <workItem from="1581073763619" duration="144000" />
       <workItem from="1581160950624" duration="5479000" />
-      <workItem from="1581174777980" duration="7938000" />
+      <workItem from="1581174777980" duration="11770000" />
     </task>
     <servers />
   </component>

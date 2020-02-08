@@ -120,7 +120,7 @@ function CreatePage(props) {
         <Layout>
             <div style={{backgroundColor: "#ddd"}} className="py-5">
                 <Container>
-                    <Panel style={{borderRadius: "8px", backgroundColor: "white"}} className="shadow-sm py-5 p-2">
+                    <Panel style={{borderRadius: "24px", backgroundColor: "white"}} className="shadow-sm py-5 p-2">
                         <Card.Img/>
                         <Card.Body>
                             <Form>

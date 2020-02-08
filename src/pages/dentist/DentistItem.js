@@ -12,7 +12,7 @@ function DentistItem(props) {
     };
 
     return (
-        <Panel bordered={true} shaded={true} className="shadow-sm">
+        <Panel bordered={true} shaded={true} className="shadow-sm" style={{backgroundColor: "white", borderRadius: "24px"}}>
             <small>Name</small>
             <p>{props.dentist.name}</p>
             <Divider/>
