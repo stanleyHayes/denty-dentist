@@ -4,7 +4,6 @@ import {
     Col,
     Container,
     ControlLabel,
-    Form,
     FormControl,
     FormGroup,
     HelpBlock,
@@ -15,6 +14,7 @@ import {
 import {Link, useHistory} from "react-router-dom";
 
 import axios from "axios";
+import {Form} from "react-bootstrap";
 
 function LoginPage(props) {
 
@@ -81,59 +81,91 @@ function LoginPage(props) {
     }
 
     return (
-        <Container>
-            <Panel style={{backgroundColor: "whitesmoke", borderRadius: "24px"}} className="shadow-sm">
+
+        <div style={{backgroundColor: "#ddd"}} className="py-5">
+            <Container>
                 <Row style={style}>
                     <Col smOffset={2} xs={20} sm={20} xsOffset={2} mdOffset={2} md={20} lgOffset={6} lg={12}>
-                        <h1 style={{textAlign: "center"}}>Denty Dentist</h1>
-                        <h5 style={{textAlign: "center"}}>Sign In</h5>
-                    </Col>
-                    <Col smOffset={2} xs={20} sm={20} xsOffset={2} mdOffset={2} md={20} lgOffset={6} lg={12}>
-                        <Form fluid={true}>
+                        <Panel style={{backgroundColor: "white", borderRadius: "24px"}} className="shadow-sm">
+                            <div className="mb-5">
+                                <h1 className="text-center">Denty Dentist</h1>
+                                <h5 className="text-center">Sign In</h5>
+                            </div>
 
-                            <FormGroup>
-                                <ControlLabel htmlFor="email">Email</ControlLabel>
-                                <FormControl name="email" id="email" type="email" onChange={handleUserChange} required/>
-                                <HelpBlock>This field is required</HelpBlock>
-                            </FormGroup>
+                            <Form>
+                                <Form.Group>
+                                    <Form.Label htmlFor="email">Email</Form.Label>
+                                    <Form.Control
+                                        placeholder="Enter Email"
+                                        className="rounded-pill"
+                                        name="email"
+                                        id="email"
+                                        type="email"
+                                        onChange={handleUserChange}
+                                        required
+                                    />
+                                </Form.Group>
 
-                            <FormGroup>
-                                <ControlLabel htmlFor="password">Password</ControlLabel>
-                                <FormControl name="password" id="password" type={(visibility) ? "text" : "password"}
-                                             onChange={handleUserChange} required/>
-                                <HelpBlock>This field is required</HelpBlock>
+                                <Form.Group>
+                                    <Form.Label htmlFor="password">Password</Form.Label>
+                                    <Form.Control
+                                        placeholder="Enter Password"
+                                        className="rounded-pill"
+                                        name="password"
+                                        id="password"
+                                        type={(visibility) ? "text" : "password"}
+                                        onChange={handleUserChange}
+                                        required
+                                    />
 
-                                <Button onClick={handleChangeVisibility} appearance="link" size="lg"
+                                    <Button
+                                        onClick={handleChangeVisibility}
+                                        appearance="link"
+                                        size="sm"
+                                        className="rounded-pill"
                                         style={{float: "right"}}>
-                                    {(visibility) ? "Hide Password" : "Show Password"}
-                                </Button>
-                            </FormGroup>
+                                        {(visibility) ? "Hide Password" : "Show Password"}
+                                    </Button>
+                                </Form.Group>
 
-                            <FormGroup>
-                                <Button block={true} color="green" size="lg" onClick={handleSubmit}
+                                <Form.Group>
+                                    <Button
+                                        block={true}
+                                        color="green"
+                                        size="sm"
+                                        onClick={handleSubmit}
                                         onSubmit={handleSubmit}
-                                        loading={loading} disabled={loading}>
-                                    Sign In
-                                </Button>
+                                        loading={loading}
+                                        disabled={loading}>
+                                        Sign In
+                                    </Button>
 
-                                <Button block={true} size="lg" style={{textAlign: "center"}} appearance="link">
-                                    <Link to="/register">
-                                        Don't have an account? Sign up here
+                                    <Button
+                                        block={true}
+                                        size="sm"
+                                        style={{textAlign: "center"}}
+                                        appearance="link">
+                                        <Link to="/register">
+                                            Don't have an account? Sign up here
+                                        </Link>
+                                    </Button>
+                                </Form.Group>
+
+                                <Button
+                                    block={true}
+                                    size="sm"
+                                    appearance="link"
+                                    style={{textAlign: "center"}}>
+                                    <Link to="/forgotten-password">
+                                        Forgotten Password?
                                     </Link>
                                 </Button>
-                            </FormGroup>
-
-                            <Button block={true} size="lg" style={{textAlign: "right"}}>
-                                <Link to="/forgotten-password">
-                                    Forgotten Password?
-                                </Link>
-                            </Button>
-
-                        </Form>
+                            </Form>
+                        </Panel>
                     </Col>
                 </Row>
-            </Panel>
-        </Container>
+            </Container>
+        </div>
     )
 }
 
