@@ -1,23 +1,30 @@
 import React, {useEffect, useState} from "react";
-import {Col, Row} from "rsuite"
+import {Col, Grid, List, Row} from "rsuite";
 import Layout from "../../components/layout/Layout";
 import axios from "axios";
-import DentistItem from "./DentistItem";
-import {Container} from "react-bootstrap";
+import DentistListItem from "./DentistListItem";
+import DentistPage from "./DentistPage";
 
-function DentistsPage(props) {
+
+function AppointmentsPage(props) {
 
     const [dentists, setDentists] = useState([]);
+    const [selectedDentist, setSelectedDentist] = useState(null);
     const [userID, setUserID] = useState(localStorage.getItem("user_id") || null);
     const [token, setToken] = useState(localStorage.getItem("token") || null);
 
+    function handleSelectedDentist(dentist) {
+        setSelectedDentist(dentist);
+    }
+
+
     useEffect(function () {
         axios({
-            url: "http://localhost:5000/api/v1/users?role=Dentist",
+            url: `http://localhost:5000/api/v1/appointments?dentist=${userID}`,
             method: "get",
             headers: {Authorization: `Bearer ${token}`}
         }).then(function (response) {
-            setDentists(response.data.users);
+            setDentists(response.data.dentists);
         }).catch(function (error) {
             console.log(error);
         });
@@ -25,35 +32,63 @@ function DentistsPage(props) {
 
     return (
         <Layout>
-            <Container>
-                <Row className="my-2">
-                    {
-                        (dentists.length <= 0) ? (
-                                <Col style={{
-                                    minHeight: "85vh",
-                                    backgroundColor: "whitesmoke",
-                                    display: "flex",
-                                    justifyContent: "center",
-                                    alignItems: "center",
-                                    justify: "center"
-                                }}>
-                                    <h5 style={{color: "#999"}}>No Dentists available</h5>
-                                </Col>
-                            ) :
-                            (
-                                dentists.map(function (dentist, index) {
-                                    return (
-                                        <Col className="my-2" xs={24} md={12} lg={8} key={index}>
-                                            <DentistItem dentist={dentist}/>
-                                        </Col>
-                                    )
-                                })
-                            )
-                    }
+            <Grid fluid={true}>
+                <Row>
+                    <Col lg={8} md={8} sm={24}>
+                        <Row>
+                            {
+                                (dentists.length === 0) ? (
+                                    <Col style={{
+                                        display: "flex",
+                                        justifyContent: "center",
+                                        alignItems: "center",
+                                        minHeight: "93vh",
+                                        backgroundColor: "whitesmoke"
+                                    }}>
+                                        <h5 style={{color: "#999"}}>No Dentists</h5>
+                                    </Col>
+                                ) : (
+                                    <Col className="mb-4" xs={24}>
+                                        <List hover={true} bordered={true} size="lg">
+                                            {
+                                                dentists.map(function (dentist) {
+                                                    return (
+                                                        <DentistListItem
+                                                            dentist={dentist}
+                                                            handleSelectedDentist={handleSelectedDentist}/>
+                                                    )
+                                                })
+                                            }
+                                        </List>
+                                    </Col>
+                                )
+                            }
+                        </Row>
+                    </Col>
+                    <Col lg={15} sm={22} md={14} className="ml-lg-4">
+                        <Row>
+                            {
+                                (!selectedDentist) ? (
+                                    <Col style={{
+                                        display: "flex",
+                                        justifyContent: "center",
+                                        alignItems: "center",
+                                        minHeight: "93vh"
+                                    }}>
+                                        <h5 style={{color: "#999"}}>No Dentist Selected</h5>
+                                    </Col>
+                                ) : (
+                                    <Col>
+                                        <DentistPage dentist={selectedDentist}/>
+                                    </Col>
+                                )
+                            }
+                        </Row>
+                    </Col>
                 </Row>
-            </Container>
+            </Grid>
         </Layout>
     )
 }
 
-export default DentistsPage;
+export default AppointmentsPage;

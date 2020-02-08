@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
 import {Col, Divider, Grid, List, Panel, Row} from "rsuite";
 import Layout from "../../components/layout/Layout";
-import RecordItem from "./RecordItem";
 import RecordPage from "./RecordPage";
 import axios from "axios";
+import RecordListItem from "./RecordListItem";
 
 
 function RecordsPage(props) {
@@ -53,7 +53,7 @@ function RecordsPage(props) {
                                             {
                                                 records.map(function (record) {
                                                     return (
-                                                        <RecordItem
+                                                        <RecordListItem
                                                             record={record}
                                                             handleSelectedRecord={handleSelectedRecord}/>
                                                     )
@@ -84,7 +84,6 @@ function RecordsPage(props) {
                                 )
                             }
                         </Row>
-
                     </Col>
                 </Row>
             </Grid>

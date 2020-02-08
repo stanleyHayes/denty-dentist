@@ -92,77 +92,79 @@ function RegistrationPage(props) {
 
     return (
         <Container>
-            <Row style={style}>
-                <Col smOffset={2} xs={20} sm={20} xsOffset={2} mdOffset={2} md={20} lgOffset={6} lg={12}>
-                    <h1 style={{textAlign: "center"}}>Denty Dentist</h1>
-                    <h5 style={{textAlign: "center"}}>Sign Up</h5>
-                </Col>
-                <Col smOffset={2} xs={20} sm={20} xsOffset={2} mdOffset={2} md={20} lgOffset={6} lg={12}>
-                    <Form fluid={true}>
-                        <FormGroup>
-                            <ControlLabel htmlFor="name">Name</ControlLabel>
-                            <FormControl name="name" id="name" required onChange={handleUserChange}/>
-                            <HelpBlock>This field is required</HelpBlock>
-                        </FormGroup>
+            <Panel style={{backgroundColor: "whitesmoke", borderRadius: "24px"}} className="shadow-sm">
+                <Row style={style}>
+                    <Col smOffset={2} xs={20} sm={20} xsOffset={2} mdOffset={2} md={20} lgOffset={6} lg={12}>
+                        <h1 style={{textAlign: "center"}}>Denty Dentist</h1>
+                        <h5 style={{textAlign: "center"}}>Sign Up</h5>
+                    </Col>
+                    <Col smOffset={2} xs={20} sm={20} xsOffset={2} mdOffset={2} md={20} lgOffset={6} lg={12}>
+                        <Form fluid={true}>
+                            <FormGroup>
+                                <ControlLabel htmlFor="name">Name</ControlLabel>
+                                <FormControl name="name" id="name" required onChange={handleUserChange}/>
+                                <HelpBlock>This field is required</HelpBlock>
+                            </FormGroup>
 
-                        <FormGroup>
-                            <ControlLabel htmlFor="email">Email</ControlLabel>
-                            <FormControl name="email" id="email" type="email" onChange={handleUserChange} required/>
-                            <HelpBlock>This field is required</HelpBlock>
-                        </FormGroup>
+                            <FormGroup>
+                                <ControlLabel htmlFor="email">Email</ControlLabel>
+                                <FormControl name="email" id="email" type="email" onChange={handleUserChange} required/>
+                                <HelpBlock>This field is required</HelpBlock>
+                            </FormGroup>
 
-                        <FormGroup>
-                            <ControlLabel htmlFor="username">Username</ControlLabel>
-                            <FormControl name="username" id="username" type="text" onChange={handleUserChange}
-                                         required/>
-                            <HelpBlock>This field is required</HelpBlock>
-                        </FormGroup>
+                            <FormGroup>
+                                <ControlLabel htmlFor="username">Username</ControlLabel>
+                                <FormControl name="username" id="username" type="text" onChange={handleUserChange}
+                                             required/>
+                                <HelpBlock>This field is required</HelpBlock>
+                            </FormGroup>
 
-                        <FormGroup>
-                            <ControlLabel htmlFor="username">Birthday</ControlLabel>
-                            <DatePicker block={true} name="username" id="username" onChange={handleUserChange}
-                                        required/>
-                            <HelpBlock>This field is required</HelpBlock>
-                        </FormGroup>
+                            <FormGroup>
+                                <ControlLabel htmlFor="username">Birthday</ControlLabel>
+                                <DatePicker block={true} name="username" id="username" onChange={handleUserChange}
+                                            required/>
+                                <HelpBlock>This field is required</HelpBlock>
+                            </FormGroup>
 
-                        <FormGroup>
-                            <ControlLabel htmlFor="password">Password</ControlLabel>
-                            <FormControl name="password" id="password" type={(visibility) ? "text" : "password"}
-                                         onChange={handleUserChange} required/>
-                            <HelpBlock>This field is required</HelpBlock>
-                        </FormGroup>
+                            <FormGroup>
+                                <ControlLabel htmlFor="password">Password</ControlLabel>
+                                <FormControl name="password" id="password" type={(visibility) ? "text" : "password"}
+                                             onChange={handleUserChange} required/>
+                                <HelpBlock>This field is required</HelpBlock>
+                            </FormGroup>
 
 
-                        <FormGroup>
-                            <ControlLabel htmlFor="confirm-password">Confirm Password</ControlLabel>
-                            <FormControl name="confirm-password" id="conform-password"
-                                         type={(visibility) ? "text" : "password"}
-                                         onChange={handleConfirmPasswordChange} required/>
-                            <HelpBlock>This field is required</HelpBlock>
+                            <FormGroup>
+                                <ControlLabel htmlFor="confirm-password">Confirm Password</ControlLabel>
+                                <FormControl name="confirm-password" id="conform-password"
+                                             type={(visibility) ? "text" : "password"}
+                                             onChange={handleConfirmPasswordChange} required/>
+                                <HelpBlock>This field is required</HelpBlock>
 
-                            <Button onClick={handleChangeVisibility} appearance="link" size="lg"
-                                    style={{float: "right"}}>
-                                {(visibility) ? "Hide Password" : "Show Password"}
-                            </Button>
+                                <Button onClick={handleChangeVisibility} appearance="link" size="lg"
+                                        style={{float: "right"}}>
+                                    {(visibility) ? "Hide Password" : "Show Password"}
+                                </Button>
 
-                        </FormGroup>
+                            </FormGroup>
 
-                        <FormGroup>
-                            <Button block={true} color="green" size="lg" onClick={handleSubmit}
-                                    onSubmit={handleSubmit}
-                                    loading={loading} disabled={loading}>
-                                Sign Up
-                            </Button>
+                            <FormGroup>
+                                <Button block={true} color="green" size="lg" onClick={handleSubmit}
+                                        onSubmit={handleSubmit}
+                                        loading={loading} disabled={loading}>
+                                    Sign Up
+                                </Button>
 
-                            <Button block={true} size="lg" style={{textAlign: "center"}} appearance="link">
-                                <Link to="/login">
-                                    Already have an account? Login here
-                                </Link>
-                            </Button>
-                        </FormGroup>
-                    </Form>
-                </Col>
-            </Row>
+                                <Button block={true} size="lg" style={{textAlign: "center"}} appearance="link">
+                                    <Link to="/login">
+                                        Already have an account? Login here
+                                    </Link>
+                                </Button>
+                            </FormGroup>
+                        </Form>
+                    </Col>
+                </Row>
+            </Panel>
         </Container>
     )
 }

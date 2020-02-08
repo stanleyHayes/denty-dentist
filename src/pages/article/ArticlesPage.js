@@ -1,25 +1,26 @@
 import React, {useEffect, useState} from "react";
-import {Col, Row} from "rsuite"
+import {Col, Grid, List, Row} from "rsuite";
 import Layout from "../../components/layout/Layout";
 import axios from "axios";
-import {Tab, Tabs, Container} from "react-bootstrap";
-import ArticleItem from "./ArticleItem";
+import ArticlePage from "./ArticlePage";
+import ArticleListItem from "./ArticleListItem";
+
 
 function ArticlesPage(props) {
 
-    const [myArticles, setMyArticles] = useState([]);
     const [articles, setArticles] = useState([]);
+    const [selectedArticle, setSelectedArticle] = useState(null);
     const [userID, setUserID] = useState(localStorage.getItem("user_id") || null);
     const [token, setToken] = useState(localStorage.getItem("token") || null);
-    const [tabKey, setTabKey] = useState("all");
 
-    function handleTabSelect(keyEvent, event) {
-        setTabKey(keyEvent);
+    function handleSelectedArticle(article) {
+        setSelectedArticle(article);
     }
+
 
     useEffect(function () {
         axios({
-            url: "http://localhost:5000/api/v1/articles",
+            url: `http://localhost:5000/api/v1/articles`,
             method: "get",
             headers: {Authorization: `Bearer ${token}`}
         }).then(function (response) {
@@ -29,84 +30,63 @@ function ArticlesPage(props) {
         });
     }, [articles]);
 
-    useEffect(function () {
-        axios({
-            url: `http://localhost:5000/api/v1/articles?author=${userID}`,
-            method: "get",
-            headers: {Authorization: `Bearer ${token}`}
-        }).then(function (response) {
-            setMyArticles(response.data.articles);
-        }).catch(function (error) {
-            console.log(error);
-        });
-    }, [myArticles]);
-
-
     return (
         <Layout>
-            <Container>
-                <Tabs
-                    className="my-3"
-                    id="articles"
-                    activeKey={tabKey}
-                    onSelect={handleTabSelect}
-                    defaultActiveKey="all"
-                    variant="tabs">
-
-                    <Tab title="Articles" eventKey="all">
-                        <Row className="my-2">
+            <Grid fluid={true}>
+                <Row>
+                    <Col lg={8} md={8} sm={24}>
+                        <Row>
                             {
                                 (articles.length === 0) ? (
-                                        <Col style={{
-                                            minHeight: "85vh",
-                                            backgroundColor: "whitesmoke",
-                                            display: "flex",
-                                            justifyContent: "center",
-                                            alignItems: "center",
-                                        }}>
-                                            <h5 style={{color: "#999"}}>No Articles</h5>
-                                        </Col>
-                                    ) :
-                                    (
-                                        articles.map(function (article, index) {
-                                            return (
-                                                <Col className="my-2" xs={24} md={12} lg={8} key={index}>
-                                                    <ArticleItem article={article}/>
-                                                </Col>
-                                            )
-                                        })
-                                    )
+                                    <Col style={{
+                                        display: "flex",
+                                        justifyContent: "center",
+                                        alignItems: "center",
+                                        minHeight: "93vh",
+                                        backgroundColor: "whitesmoke"
+                                    }}>
+                                        <h5 style={{color: "#999"}}>No Articles</h5>
+                                    </Col>
+                                ) : (
+                                    <Col className="mb-4" xs={24}>
+                                        <List hover={true} bordered={true} size="lg">
+                                            {
+                                                articles.map(function (article) {
+                                                    return (
+                                                        <ArticleListItem
+                                                            article={article}
+                                                            handleSelectedArticle={handleSelectedArticle}/>
+                                                    )
+                                                })
+                                            }
+                                        </List>
+                                    </Col>
+                                )
                             }
                         </Row>
-                    </Tab>
-                    <Tab title="My Articles" eventKey="my_articles">
-                        <Row className="my-2">
+                    </Col>
+                    <Col lg={15} sm={22} md={14} className="ml-lg-4">
+                        <Row>
                             {
-                                (myArticles.length === 0) ? (
-                                        <Col style={{
-                                            minHeight: "85vh",
-                                            backgroundColor: "whitesmoke",
-                                            display: "flex",
-                                            justifyContent: "center",
-                                            alignItems: "center",
-                                        }}>
-                                            <h5 style={{color: "#999"}}>No Authored Articles</h5>
-                                        </Col>
-                                    ) :
-                                    (
-                                        myArticles.map(function (article, index) {
-                                            return (
-                                                <Col className="my-2" xs={24} md={12} lg={8} key={index}>
-                                                    <ArticleItem article={article}/>
-                                                </Col>
-                                            )
-                                        })
-                                    )
+                                (!selectedArticle) ? (
+                                    <Col style={{
+                                        display: "flex",
+                                        justifyContent: "center",
+                                        alignItems: "center",
+                                        minHeight: "93vh"
+                                    }}>
+                                        <h5 style={{color: "#999"}}>No Article Selected</h5>
+                                    </Col>
+                                ) : (
+                                    <Col>
+                                        <ArticlePage article={selectedArticle}/>
+                                    </Col>
+                                )
                             }
                         </Row>
-                    </Tab>
-                </Tabs>
-            </Container>
+                    </Col>
+                </Row>
+            </Grid>
         </Layout>
     )
 }

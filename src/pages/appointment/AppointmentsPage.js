@@ -1,78 +1,87 @@
 import React, {useEffect, useState} from "react";
-import {Row, Col} from "rsuite"
+import {Col, Grid, List, Panel, Row} from "rsuite";
 import Layout from "../../components/layout/Layout";
-
 import axios from "axios";
-import {Tab, Tabs, Container} from "react-bootstrap";
+import AppointmentPage from "./AppointmentPage";
 import AppointmentItem from "./AppointmentItem";
+import AppointmentListItem from "./AppointmentListItem";
+import {Container, Form} from "react-bootstrap";
+
 
 function AppointmentsPage(props) {
 
-    const [unassignedAppointments, setUnassignedAppointments] = useState([]);
-    const [assignedAppointments, setAssignedAppointments] = useState([]);
+    const [appointments, setAppointments] = useState([]);
+    const [selectedAppointment, setSelectedAppointment] = useState(null);
     const [userID, setUserID] = useState(localStorage.getItem("user_id") || null);
     const [token, setToken] = useState(localStorage.getItem("token") || null);
-    const [tabKey, setTabKey] = useState("assigned");
 
-    function handleTabSelect(keyEvent, event) {
-        setTabKey(keyEvent);
+    function handleSelectedAppointment(appointment) {
+        setSelectedAppointment(appointment);
     }
 
 
     useEffect(function () {
         axios({
-            url: "http://localhost:5000/api/v1/appointments?status=vacant",
+            url: `http://localhost:5000/api/v1/appointments?dentist=${userID}`,
             method: "get",
             headers: {Authorization: `Bearer ${token}`}
         }).then(function (response) {
-            setUnassignedAppointments(response.data.appointments);
+            setAppointments(response.data.appointments);
         }).catch(function (error) {
             console.log(error);
         });
-    }, [unassignedAppointments]);
-
-
-    useEffect(function () {
-        axios({
-            url: `http://localhost:5000/api/v1/appointments?status=vacant&dentist=${userID}`,
-            method: "get",
-            headers: {Authorization: `Bearer ${token}`}
-        }).then(function (response) {
-            setAssignedAppointments(response.data.appointments);
-        }).catch(function (error) {
-            console.log(error);
-        });
-    }, [assignedAppointments]);
-
+    }, [appointments]);
 
     return (
         <Layout>
-            <Container>
-                <Tabs
-                    className="my-3"
-                    id="appointments"
-                    activeKey={tabKey}
-                    onSelect={handleTabSelect}
-                    defaultActiveKey="vacant"
-                    variant="tabs">
+            <div style={{backgroundColor: "#ddd"}} className="py-5">
+                <Container>
+                    <Grid fluid={true}>
+                        <Row className="mb-5">
+                            <Col xs={12}>
+                                <Panel className="shadow-sm" style={{borderRadius: "16px", backgroundColor: "white"}}>
+                                    <Form>
+                                        <Form.Group>
+                                            <Form.Control as="select">
+                                                <option>All</option>
+                                                <option>Assigned</option>
+                                                <option>Unassigned</option>
+                                            </Form.Control>
+                                        </Form.Group>
+                                    </Form>
+                                </Panel>
+                            </Col>
 
-                    <Tab title="Vacant" eventKey="vacant">
+                            <Col xs={12}>
+                                <Panel className="shadow-sm" style={{borderRadius: "16px", backgroundColor: "white"}}>
+                                    <Form>
+                                        <Form.Group>
+                                            <Form.Control as="select">
+                                                <option>All</option>
+                                                <option>Just Mine</option>
+                                            </Form.Control>
+                                        </Form.Group>
+                                    </Form>
+                                </Panel>
+                            </Col>
+                        </Row>
+
                         <Row className="my-2">
                             {
-                                (unassignedAppointments.length === 0) ? (
+                                (appointments.length <= 0) ? (
                                         <Col style={{
-                                            minHeight: "85vh",
+                                            minHeight: "65vh",
                                             backgroundColor: "whitesmoke",
                                             display: "flex",
                                             justifyContent: "center",
                                             alignItems: "center",
                                             justify: "center"
                                         }}>
-                                            <h5 style={{color: "#999"}}>No Vacant Appointments</h5>
+                                            <h5 style={{color: "#999"}}>No Appointments</h5>
                                         </Col>
                                     ) :
                                     (
-                                        unassignedAppointments.map(function (appointment, index) {
+                                        appointments.map(function (appointment, index) {
                                             return (
                                                 <Col className="my-2" xs={24} md={12} lg={8} key={index}>
                                                     <AppointmentItem appointment={appointment}/>
@@ -82,37 +91,9 @@ function AppointmentsPage(props) {
                                     )
                             }
                         </Row>
-                    </Tab>
-                    <Tab title="Assigned" eventKey="assigned">
-                        <Row className="my-2">
-                            {
-                                (assignedAppointments.length <= 0) ? (
-                                        <Col style={{
-                                            minHeight: "85vh",
-                                            backgroundColor: "whitesmoke",
-                                            display: "flex",
-                                            justifyContent: "center",
-                                            alignItems: "center",
-                                            justify: "center"
-                                        }}>
-                                            <h1>WTF</h1>
-                                            <h5 style={{color: "#999"}}>No Assigned Appointments</h5>
-                                        </Col>
-                                    ) :
-                                    (
-                                        assignedAppointments.map(function (appointment, index) {
-                                            return (
-                                                <Col className="my-2" xs={24} md={12} lg={8} key={index}>
-                                                    <AppointmentItem appointment={appointment}/>
-                                                </Col>
-                                            )
-                                        })
-                                    )
-                            }
-                        </Row>
-                    </Tab>
-                </Tabs>
-            </Container>
+                    </Grid>
+                </Container>
+            </div>
         </Layout>
     )
 }

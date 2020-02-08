@@ -9,7 +9,7 @@ import {
     FormGroup,
     HelpBlock,
     Row,
-    Notification
+    Notification, Panel
 } from "rsuite";
 
 import {useHistory} from "react-router-dom";
@@ -80,47 +80,50 @@ function ForgottenPasswordPage(props) {
 
     return (
         <Container>
-            <Row style={style}>
-                <Col smOffset={2} xs={20} sm={20} xsOffset={2} mdOffset={2} md={20} lgOffset={6} lg={12}>
-                    <h1 style={{textAlign: "center"}}>Bisa</h1>
-                    <h5 style={{textAlign: "center"}}>Password Recovery</h5>
-                </Col>
-                <Col smOffset={2} xs={20} sm={20} xsOffset={2} mdOffset={2} md={20} lgOffset={6} lg={12}>
-                    <Form fluid={true}>
+            <Panel style={{backgroundColor: "whitesmoke", borderRadius: "24px"}} className="shadow-sm">
+                <Row style={style}>
+                    <Col smOffset={2} xs={20} sm={20} xsOffset={2} mdOffset={2} md={20} lgOffset={6} lg={12}>
+                        <h1 style={{textAlign: "center"}}>Bisa</h1>
+                        <h5 style={{textAlign: "center"}}>Password Recovery</h5>
+                    </Col>
+                    <Col smOffset={2} xs={20} sm={20} xsOffset={2} mdOffset={2} md={20} lgOffset={6} lg={12}>
+                        <Form fluid={true}>
 
-                        <FormGroup>
-                            <ControlLabel htmlFor="email">Email</ControlLabel>
-                            <FormControl name="email" id="email" type="email" onChange={handleUserChange} required/>
-                            <HelpBlock>This field is required</HelpBlock>
-                        </FormGroup>
+                            <FormGroup>
+                                <ControlLabel htmlFor="email">Email</ControlLabel>
+                                <FormControl name="email" id="email" type="email" onChange={handleUserChange} required/>
+                                <HelpBlock>This field is required</HelpBlock>
+                            </FormGroup>
 
-                        <FormGroup>
-                            <ControlLabel htmlFor="password">New Password</ControlLabel>
-                            <FormControl name="password" id="password" type={(visibility) ? "text" : "password"}
-                                         onChange={handleUserChange} required/>
-                            <HelpBlock>This field is required</HelpBlock>
+                            <FormGroup>
+                                <ControlLabel htmlFor="password">New Password</ControlLabel>
+                                <FormControl name="password" id="password" type={(visibility) ? "text" : "password"}
+                                             onChange={handleUserChange} required/>
+                                <HelpBlock>This field is required</HelpBlock>
 
-                            <ControlLabel htmlFor="confirm-password">Confirm Password</ControlLabel>
-                            <FormControl name="confirm-password" id="confirm-password"
-                                         type={(visibility) ? "text" : "password"}
-                                         onChange={handleUserChange} required/>
-                            <HelpBlock>This field is required</HelpBlock>
+                                <ControlLabel htmlFor="confirm-password">Confirm Password</ControlLabel>
+                                <FormControl name="confirm-password" id="confirm-password"
+                                             type={(visibility) ? "text" : "password"}
+                                             onChange={handleUserChange} required/>
+                                <HelpBlock>This field is required</HelpBlock>
 
-                            <Button onClick={handleChangeVisibility} appearance="primary" size="lg"
-                                    style={{float: "right"}}>
-                                {(visibility) ? "Hide" : "Show"}
-                            </Button>
-                        </FormGroup>
+                                <Button onClick={handleChangeVisibility} appearance="primary" size="lg"
+                                        style={{float: "right"}}>
+                                    {(visibility) ? "Hide" : "Show"}
+                                </Button>
+                            </FormGroup>
 
-                        <FormGroup>
-                            <Button block={true} color="green" size="lg" onClick={handleSubmit} onSubmit={handleSubmit}
-                                    loading={loading} disabled={loading}>
-                                Update Password
-                            </Button>
-                        </FormGroup>
-                    </Form>
-                </Col>
-            </Row>
+                            <FormGroup>
+                                <Button block={true} color="green" size="lg" onClick={handleSubmit}
+                                        onSubmit={handleSubmit}
+                                        loading={loading} disabled={loading}>
+                                    Update Password
+                                </Button>
+                            </FormGroup>
+                        </Form>
+                    </Col>
+                </Row>
+            </Panel>
         </Container>
     )
 }

@@ -1,41 +1,46 @@
 import React, {useState} from "react";
-import {Col, Container, Row} from "rsuite"
+import {Col, Container, Divider, Panel, Row} from "rsuite"
 import Layout from "../../components/layout/Layout";
-import DentistItem from "./DentistItem";
+import ArticleItem from "../article/ArticleItem";
 
 function DentistPage(props) {
 
-    const [dentists, setDentists] = useState([]);
-
     return (
         <Layout>
-            <Container>
-                <Row className="my-2">
-                    {
-                        (dentists.length <= 0) ? (
-                                <Col style={{
-                                    minHeight: "85vh",
-                                    backgroundColor: "whitesmoke",
-                                    display: "flex",
-                                    justifyContent: "center",
-                                    alignItems: "center",
-                                    justify: "center"
-                                }}>
-                                    <h5 style={{color: "#999"}}>No Dentists available</h5>
+
+            <div style={{backgroundColor: "whitesmoke"}}>
+                <Container>
+                    <Panel bordered={true} style={{backgroundColor: "white", borderRadius: "8px"}}>
+
+                    </Panel>
+
+                    <Divider>Articles</Divider>
+                    <Row>
+                        {
+                            (props.dentist.articles.length === 0) ? (
+                                <Col
+                                    xs={24}
+                                    style={{
+                                        display: "flex",
+                                        justifyContent: "center",
+                                        alignItems: "center"
+                                    }}>
+                                    <h6>No Articles Published</h6>
                                 </Col>
-                            ) :
-                            (
-                                dentists.map(function (dentist, index) {
+                            ) : (
+                                props.dentist.articles.map(function (article, index) {
                                     return (
-                                        <Col className="my-2" xs={24} md={12} lg={8} key={index}>
-                                            <DentistItem dentist={dentist}/>
+                                        <Col xs={24} sm={24} md={12} lg={8} key={index}>
+                                            <ArticleItem article={article}/>
                                         </Col>
                                     )
                                 })
                             )
-                    }
-                </Row>
-            </Container>
+                        }
+                    </Row>
+                    <Divider>Records</Divider>
+                </Container>
+            </div>
         </Layout>
     )
 }

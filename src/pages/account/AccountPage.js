@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Layout from "../../components/layout/Layout";
-import {Button, Col, Container, List, Notification, Panel, Row} from "rsuite";
+import {Button, Col, Container, Divider, List, Notification, Panel, Row} from "rsuite";
 import {Link, useHistory} from "react-router-dom";
 import axios from "axios";
 
@@ -55,12 +55,11 @@ function AccountPage(props) {
                     backgroundColor: "whitesmoke"
                 }}>
                     <Col smOffset={2} xs={20} sm={20} xsOffset={2} mdOffset={2} md={20} lgOffset={6} lg={12}>
-                        <h1 style={{textAlign: "center"}}>Denty Dentist</h1>
-                        <h5 style={{textAlign: "center"}}>Account Information</h5>
-                    </Col>
-
-                    <Col smOffset={2} xs={20} sm={20} xsOffset={2} mdOffset={2} md={20} lgOffset={6} lg={12}>
-                        <Panel shaded={false} bordered={true}>
+                        <Panel style={{backgroundColor: "white", borderRadius: "24px"}} className="shadow-sm">
+                            <div className="mb-4">
+                                <h1 className="text-center">Denty Dentist</h1>
+                                <h5 className="text-center">Account Information</h5>
+                            </div>
                             <List bordered={true} hover={true} size="lg">
                                 <List.Item>
                                     <Link to="/edit-profile">
